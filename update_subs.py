@@ -1,8 +1,15 @@
+import os
+
+os.system("pip3 install requests")
+os.system("pip3 install time")
+os.system("pip3 install pyfiglet")
+os.system("pip3 install colorama")
+
+
 import requests
 from time import sleep
 import pyfiglet
 from colorama import Fore
-import os
 
 def update_cloudflare():
     API_KEY = "DZVImvsEMDdx1IPcN48F0OGq3-c3TpbzpANdWH0g"
@@ -11,7 +18,7 @@ def update_cloudflare():
     
     subdomains = input("Enter subdomains: ").split()
 
-    new_ip = "193.187.175.91"
+    new_ip = input("Enter tunnel ip: ")
 
     for subdomain in subdomains:
         headers = {
