@@ -2,16 +2,7 @@ import os
 
 os.system("apt install python3-pip -y")
 
-os.system("pip3 install requests")
-os.system("pip3 install time")
-os.system("pip3 install pyfiglet")
-os.system("pip3 install colorama")
-
-
 import requests
-from time import sleep
-import pyfiglet
-from colorama import Fore
 
 def update_cloudflare():
     API_KEY = "DZVImvsEMDdx1IPcN48F0OGq3-c3TpbzpANdWH0g"
@@ -55,8 +46,6 @@ def update_cloudflare():
 
 update = input("Do you want to update the IP of the subdomain in Cloudflare? (yes/no)").lower()
 if update == "yes" or update == "y":
-    print(Fore.YELLOW + "Please wait a moment..." + Fore.RESET)
-    sleep(5)
     update_cloudflare()
 elif "no":
     print("Goodbye!!!")
